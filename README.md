@@ -17,7 +17,7 @@ This software is perfectly suited for cosmetic surgons,dermatologists, and hospi
 
 clone this repository into your working directory
 
-	git clone https://github.com/benaich/Doctors.git
+	git clone https://github.com/benaich/Doctors.git or https://github.com/Pacifik/Stuxnet
 
 Before starting, make sure that your local system is properly configured for Symfony.
 
