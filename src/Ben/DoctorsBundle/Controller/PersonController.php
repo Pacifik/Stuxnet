@@ -168,12 +168,12 @@ class PersonController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            $this->get('session')->getFlashBag()->add('info', "L'étudiant a été mis à jour avec succès.");
+            $this->get('session')->getFlashBag()->add('info', "Patient updated");
             return $this->redirect($this->generateUrl('person_edit', array('id' => $id)));
         }
         // $cities = $em->getRepository('BenDoctorsBundle:Person')->getCities();
 
-        $this->get('session')->getFlashBag()->add('danger', "Il y a des erreurs dans le formulaire soumis !");
+        $this->get('session')->getFlashBag()->add('danger', "Errors when submitting form !");
         return $this->render('BenDoctorsBundle:Person:edit.html.twig', array(
             'entity'      => $entity,
             'form'   => $editForm->createView(),
@@ -201,7 +201,7 @@ class PersonController extends Controller
 
             $em->remove($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('info', "Action effectué avec succès !");
+            $this->get('session')->getFlashBag()->add('info', "Successful action !");
         }
 
         return $this->redirect($this->generateUrl('person'));

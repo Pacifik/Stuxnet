@@ -2,13 +2,13 @@
 	<div class="col-md-6">  
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Couverture sociale</h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Medical insurance</h4>
 		    </header>
 		    <table class="table table-striped table-bordered">
 		    <thead>
 			    <tr>
-			    	<th>Type de couverture</th>
-			    	<th>nbre</th>
+			    	<th>Type of insurance</th>
+			    	<th>Number</th>
 			    </tr>
 		    </thead>
 		        {% for item in stats.cnss %}
@@ -25,13 +25,13 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Médicament délivré par le centre</h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Medicine delivered</h4>
 		    </header>
 		    <table class="table table-striped table-bordered">
 		    <thead>
 			    <tr>
-			    	<th>Medicament</th>
-			    	<th>nbre</th>
+			    	<th>Medicine</th>
+			    	<th>Number</th>
 			    </tr>
 		    </thead>
 		        {% for item in stats.meds %}
@@ -48,13 +48,13 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Structures sanitaires de référence par structure</h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Sanitary infrastructures by reference of structure</h4>
 		    </header>
 		    <table class="table table-striped table-bordered">
 		    <thead>
 			    <tr>
-			    	<th>spécialité</th>
-			    	<th>nbre</th>
+			    	<th>Speciality</th>
+			    	<th>Number</th>
 			    </tr>
 		    </thead>
 		        {% for item in stats.consultations_structures %}
@@ -71,13 +71,13 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Nombre de cas avec des troubles visuels</h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Cases with visual disorders</h4>
 		    </header>
 		    <table class="table table-striped table-bordered">
 		    <thead>
 			    <tr>
-			    	<th>spécialité</th>
-			    	<th>nbre</th>
+			    	<th>Speciality</th>
+			    	<th>Number</th>
 			    </tr>
 		    </thead>
 		        {% for item in stats.consultations_visual_issue %}
@@ -94,7 +94,7 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Nombre de consultations médicales à la demande <span class="badge pull-right">{{ stats.consultations_demande[0].data }}</span></h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Number of medical consultations by appointment <span class="badge pull-right">{{ stats.consultations_demande[0].data }}</span></h4>
 		    </header>
 		</div>
     </div>
@@ -103,13 +103,13 @@
     <div class="col-md-6">
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Consultations médicales à la demande par sexe</h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Medical consultations on appointment by gender</h4>
 		    </header>
 		    <table class="table table-striped table-bordered">
 		    <thead>
 			    <tr>
-			    	<th>Sexe</th>
-			    	<th>nbre</th>
+			    	<th>Gender</th>
+			    	<th>Number</th>
 			    </tr>
 		    </thead>
 		        {% for item in stats.consultations_demande_gender %}
@@ -126,7 +126,7 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Nombre de consultations médicales à la demande pour les residents <span class="badge pull-right">{{ stats.consultations_demande_resident[0].data }}</span></h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Number of medical consultations on appointment for residents<span class="badge pull-right">{{ stats.consultations_demande_resident[0].data }}</span></h4>
 		    </header>
 		</div>
     </div>
@@ -135,13 +135,13 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Consultations médicales à la demande pour les residents par sexe</h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Medical consultations on appointment for residents by gender</h4>
 		    </header>
 		    <table class="table table-striped table-bordered">
 		    <thead>
 			    <tr>
-			    	<th>Sexe</th>
-			    	<th>nbre</th>
+			    	<th>Gender</th>
+			    	<th>Number</th>
 			    </tr>
 		    </thead>
 		        {% for item in stats.consultations_demande_resident_gender %}
@@ -158,7 +158,7 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Nombre  Consultations médicales à la demande pour les residents <span class="badge pull-right">{{ stats.consultations_systematique_resident[0].data }}</span></h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Number of medical consultations on appointment for residents <span class="badge pull-right">{{ stats.consultations_systematique_resident[0].data }}</span></h4>
 		    </header>
 		</div>
     </div>
@@ -167,13 +167,13 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Examens médical systématique par sexe</h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Systematic medical consultations by gender</h4>
 		    </header>
 		    <table class="table table-striped table-bordered">
 		    <thead>
 			    <tr>
-			    	<th>Sexe</th>
-			    	<th>nbre</th>
+			    	<th>Gender</th>
+			    	<th>Number</th>
 			    </tr>
 		    </thead>
 		        {% for item in stats.consultations_systematique_resident_gender %}
@@ -190,13 +190,13 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Consultations médicale spécialisée par spécialité </h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Specialized medical consultations by speciality</h4>
 		    </header>
 		    <table class="table table-striped table-bordered">
 		    <thead>
 			    <tr>
-			    	<th>spécialité</th>
-			    	<th>nbre</th>
+			    	<th>Speciality</th>
+			    	<th>Number</th>
 			    </tr>
 		    </thead>
 		        {% for item in stats.consultations_special %}
@@ -213,14 +213,14 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Consultations médicale spécialisée par spécialité et par sexe </h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Specialized medical consultations by speciality and gender </h4>
 		    </header>
 		    <table class="table table-striped table-bordered">
 		    <thead>
 			    <tr>
-			    	<th>spécialité</th>
-			    	<th>sexe</th>
-			    	<th>nbre</th>
+			    	<th>Speciality</th>
+			    	<th>Gender</th>
+			    	<th>Number</th>
 			    </tr>
 		    </thead>
 		        {% for item in stats.consultations_special_gender %}
@@ -238,7 +238,7 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Nombre de médicament dans le stock <span class="badge pull-right">{{ stats.stock[0].data }}</span></h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Number of medicines in stock <span class="badge pull-right">{{ stats.stock[0].data }}</span></h4>
 		    </header>
 		</div>
 	</div>
@@ -247,7 +247,7 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Nombre  de cas des maladies dépistées <span class="badge pull-right">{{ stats.consultations_not_chronic[0].data }}</span></h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Number of detected diseases <span class="badge pull-right">{{ stats.consultations_not_chronic[0].data }}</span></h4>
 		    </header>
 		</div>
 	</div>
@@ -256,7 +256,7 @@
 	<div class="col-md-6"> 
 	    <div class="box">
 		    <header>
-		        <h4><span class="glyphicon glyphicon-file"></span> Nombre  de cas des maladies chroniques <span class="badge pull-right">{{ stats.consultations_chronic[0].data }}</span></h4>
+		        <h4><span class="glyphicon glyphicon-file"></span> Number of chronic diseases <span class="badge pull-right">{{ stats.consultations_chronic[0].data }}</span></h4>
 		    </header>
 		</div>
     </div>

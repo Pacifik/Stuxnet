@@ -67,11 +67,11 @@ class TestController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('info', "L'examen a été ajouté avec succès.");
+            $this->get('session')->getFlashBag()->add('info', "Checkup added successfully.");
             return $this->redirect($this->generateUrl('consultation_show', array('id' => $entity->getConsultation()->getId())));
         }
 
-        $this->get('session')->getFlashBag()->add('danger', "Il y a des erreurs dans le formulaire soumis !");
+        $this->get('session')->getFlashBag()->add('danger', "Errors when submitting form !");
         return $this->render('BenDoctorsBundle:Test:new.html.twig', array(
             'entity' => $entity,
             'type' => $type,

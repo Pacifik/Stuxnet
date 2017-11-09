@@ -3,12 +3,12 @@
 Tableau de bord | {{ parent() }}
 {% endblock %}
 {% block body %}
-<h3><span class="glyphicon glyphicon-cog"></span> Préférences</h3>
+<h3><span class="glyphicon glyphicon-cog"></span> Preferences</h3>
 <form class="form-horizontal" action="{{ path('config_update')}}" method="POST" enctype="multipart/form-data">        
     <div class="tabbable">
         <ul class="nav nav-tabs">
           <li class="active"><a href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Général</a></li>
-          <li><a href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-wrench"></span> Paramètres</a></li>
+          <li><a href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
         </ul> <!-- /tabs -->
 
     <div class="tab-content">
@@ -21,7 +21,7 @@ Tableau de bord | {{ parent() }}
         </div>              
         {{ form_row(imgform.file, { 'label': ' '}) }}
         <div class="form-group">
-          <label for="" class="col-md-4 control-label">Nom de l'application</label>
+          <label for="" class="col-md-4 control-label">Application</label>
           <div class="col-md-4">
             <input type="text" name="config[app_name]" value="{{app_config.app_name}}" class="form-control">
           </div>
@@ -33,31 +33,31 @@ Tableau de bord | {{ parent() }}
           </div>
         </div>
         <div class="form-group">
-          <label for="" class="col-md-4 control-label">Adresse</label>
+          <label for="" class="col-md-4 control-label">Adress</label>
           <div class="col-md-4">
             <input type="text" name="config[app_address]" value="{{app_config.app_address}}" class="form-control">
           </div>
         </div>
         <div class="form-group">
-          <label for="" class="col-md-4 control-label">Code Postal</label>
+          <label for="" class="col-md-4 control-label">Zip code</label>
           <div class="col-md-4">
             <input type="text" name="config[app_cp]" value="{{app_config.app_cp}}" class="form-control">
           </div>
         </div>
         <div class="form-group">
-          <label for="" class="col-md-4 control-label">Ville</label>
+          <label for="" class="col-md-4 control-label">City</label>
           <div class="col-md-4">
             <input type="text" name="config[app_city]" value="{{app_config.app_city}}" class="form-control">
           </div>
         </div>
         <div class="form-group">
-          <label for="" class="col-md-4 control-label">Tél </label>
+          <label for="" class="col-md-4 control-label">Cell </label>
           <div class="col-md-4">
             <input type="text" name="config[app_tel]" value="{{app_config.app_tel}}" class="form-control">
           </div>
         </div>
         <div class="form-group">
-          <label for="" class="col-md-4 control-label">GSM </label>
+          <label for="" class="col-md-4 control-label">Office number </label>
           <div class="col-md-4">
             <input type="text" name="config[app_gsm]" value="{{app_config.app_gsm}}" class="form-control">
           </div>
@@ -86,7 +86,7 @@ Tableau de bord | {{ parent() }}
    </div>
        <div class="form-group">
          <div class="col-md-offset-4 col-md-4">
-           <button type="submit" name="subvalider" class="btn btn-primary btn-embossed"><span class="fui-check-inverted"></span> Mettre à jour</button>
+           <button type="submit" name="subvalider" class="btn btn-primary btn-embossed"><span class="fui-check-inverted"></span> Update</button>
          </div>
        </div>
 </form>

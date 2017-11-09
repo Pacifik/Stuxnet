@@ -26,7 +26,7 @@ class ConsultationMedsType extends AbstractType
                         ->orderBy('m.name', 'ASC');
                     },
                 ))
-            ->add('count','text', array('label'=>'Nombre d\'unité'))
+            ->add('count','text', array('label'=>'Number'))
             ;
     }
     

@@ -22,7 +22,7 @@ class PersonType extends AbstractType
             ->add('email')
             ->add('birthday', 'date', array('widget' => 'single_text'))
             ->add('birthcity')
-            ->add('gender', 'choice', array('choices' => array('Féminin' => 'Female','Masculin' => 'Male'),
+            ->add('gender', 'choice', array('choices' => array('Féminin' => 'Female','Masculin' => 'Male', 'Gay' => 'Gay','Lesbian' => 'Lesbian'),
                     'required' => false,))
             ->add('contry')
             ->add('city')
@@ -32,7 +32,7 @@ class PersonType extends AbstractType
             ->add('university')
             ->add('gsm')
             ->add('cnss')
-            ->add('cnsstype', 'choice', array('choices' => array('Ramed' => 'Liberta','Cnops' => 'Momentum','Cnss' => 'Cnss','Assurance privé' => 'Private insurance','sans' => 'none')))
+            ->add('cnsstype', 'choice', array('choices' => array('Liberta' => 'Liberta','Momentum' => 'Momentum','Cnss' => 'Cnss','Private insurance' => 'Private insurance','none' => 'none')))
             ->add('parentName')
             ->add('parentAddress')
             ->add('parentGsm')

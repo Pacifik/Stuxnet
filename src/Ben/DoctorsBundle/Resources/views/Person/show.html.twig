@@ -3,19 +3,21 @@
 Tableau de bord | {{ parent() }}
 {% endblock %}
 {% block body %}
-<div class="btn-group pull-right" style="margin-top: 15px;">              
-  <button class="btn btn-primary "><span class="glyphicon glyphicon-cog"></span> Selectioner une action</button>
-  <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="{{ path('person_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-edit"></span> modifier</a></li>
-    <li><a href="{{ path('antecedent_new', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-plus"></span> Antécedent</a></li>
-    <li><a href="{{ path('consultation_new', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-plus"></span> Consultation générale</a></li>
-    <li><a href="{{ path('consultation_new', { 'id': entity.id, 'type': 1 }) }}"><span class="glyphicon glyphicon-plus"></span> Consultation specialisé</a></li>
-    <li><a id="btnPrint"><span class="glyphicon glyphicon-print"></span> imprimer</a></li>
-    <li><a href="#" id="js-delete"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></li>
-  </ul>
+<div class="btn-group pull-right" style="margin-top: 15px;">    
+  {% if is_granted("ROLE_ADMIN") %}          
+    <button class="btn btn-primary "><span class="glyphicon glyphicon-cog"></span> Select action</button>
+    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="{{ path('person_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-edit"></span> Edit</a></li>
+      <!--<li><a href="{{ path('antecedent_new', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-plus"></span> Antécedent</a></li>-->
+      <li><a href="{{ path('consultation_new', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-plus"></span> General consultation </a></li>
+      <li><a href="{{ path('consultation_new', { 'id': entity.id, 'type': 1 }) }}"><span class="glyphicon glyphicon-plus"></span> Specialized consultation </a></li>
+      <li><a id="btnPrint"><span class="glyphicon glyphicon-print"></span> Print</a></li>
+      <li><a href="#" id="js-delete"><span class="glyphicon glyphicon-trash"></span> Delete</a></li>
+    </ul>
+  {% endif %}
 </div>
 <h3><span class="glyphicon glyphicon-user"></span> {{ entity.fullName }}</h3>
 
@@ -26,45 +28,46 @@ Tableau de bord | {{ parent() }}
           <h4><span class="glyphicon glyphicon-file"></span> Patient identity</h4>
       </header>
         <ul class="list-group">
-          <li class="list-group-item"><strong>Nom :</strong> {{ entity.familyname }}</li>
-          <li class="list-group-item"><strong>Preom :</strong>  {{ entity.firstname }} </li>
-          <li class="list-group-item"><strong>CIN :</strong> {{ entity.cin }}</li>
-          <li class="list-group-item"><strong>CNE :</strong> {{ entity.cne }}</li>
-          <li class="list-group-item"><strong>Sexe :</strong> {{ entity.gender }}</li>
-          <li class="list-group-item"><strong>Date de naissance :</strong> {% if entity.birthday %}{{ entity.birthday|date('d/m/Y') }}{% endif %}</li>
-          <li class="list-group-item"><strong>Lieu de naissance :</strong> {{ entity.birthcity }}</li>
-          <li class="list-group-item"><strong>Résident :</strong> {{ entity.resident ? 'Oui' : 'Non' }}</li>
+
+          <li class="list-group-item"><strong>Firstname :</strong>  {{ entity.firstname }} </li>
+          <li class="list-group-item"><strong>Surname :</strong> {{ entity.familyname }}</li>
+          <li class="list-group-item"><strong>ID :</strong> {{ entity.cin }}</li>
+          <li class="list-group-item"><strong>FID :</strong> {{ entity.cne }}</li>
+          <li class="list-group-item"><strong>Sex :</strong> {{ entity.gender }}</li>
+          <li class="list-group-item"><strong>Date of birth :</strong> {% if entity.birthday %}{{ entity.birthday|date('d/m/Y') }}{% endif %}</li>
+          <li class="list-group-item"><strong>Place of birth :</strong> {{ entity.birthcity }}</li>
+          <li class="list-group-item"><strong>Resident :</strong> {{ entity.resident ? 'Yes' : 'No' }}</li>
         </ul>
     </div>
 </div>
 <div class="col-md-4">
     <div class="box">
       <header>
-          <h4><span class="glyphicon glyphicon-pushpin"></span> Informations générale</h4>
+          <h4><span class="glyphicon glyphicon-pushpin"></span> General informations</h4>
       </header>
       <ul class="list-group">
-          <li class="list-group-item"><strong>Etablissement :</strong> {{ entity.etablissement }}</li>
-          <li class="list-group-item"><strong>Université :</strong> {{ entity.university }}</li>
-          <li class="list-group-item"><strong>Adresse :</strong> {{ entity.address }}</li>
-          <li class="list-group-item"><strong>Province :</strong> {{ entity.city }}</li>
-          <li class="list-group-item"><strong>Pay :</strong> {{ entity.contry }}</li>
-          <li class="list-group-item"><strong>Tél :</strong> {{ entity.gsm }}</li>
-          <li class="list-group-item"><strong>adresse email :</strong> <a href="mailto:{{ entity.email }}">{{ entity.email }}</a></li>
-          <li class="list-group-item"><strong>type de couverture sociale :</strong> {{ entity.cnsstype }}</li>
-          <li class="list-group-item"><strong>N° de couverture sociale :</strong> {{ entity.cnss }}</li>
+          <li class="list-group-item"><strong>High school :</strong> {{ entity.etablissement }}</li>
+          <li class="list-group-item"><strong>University :</strong> {{ entity.university }}</li>
+          <li class="list-group-item"><strong>Adress :</strong> {{ entity.address }}</li>
+          <li class="list-group-item"><strong>City :</strong> {{ entity.city }}</li>
+          <li class="list-group-item"><strong>Nationality :</strong> {{ entity.contry }}</li>
+          <li class="list-group-item"><strong>Cell :</strong> {{ entity.gsm }}</li>
+          <li class="list-group-item"><strong>E-mail :</strong> <a href="mailto:{{ entity.email }}">{{ entity.email }}</a></li>
+          <li class="list-group-item"><strong>Medical insurance :</strong> {{ entity.cnsstype }}</li>
+          <li class="list-group-item"><strong>CNNS :</strong> {{ entity.cnss }}</li>
       </ul>
     </div>
 </div>
 <div class="col-md-4">
     <div class="box">
       <header>
-          <h4><span class="glyphicon glyphicon-user"></span> Tuteur</h4>
+          <h4><span class="glyphicon glyphicon-user"></span> Kin</h4>
       </header>
       <ul class="list-group">
           <li class="list-group-item"><strong>Nom :</strong> {{ entity.parentName }}</li>
-          <li class="list-group-item"><strong>Adresse :</strong> {{ entity.parentAddress }}</li>
-          <li class="list-group-item"><strong>Gsm :</strong> {{ entity.parentGsm }}</li>
-          <li class="list-group-item"><strong>Fixe :</strong> {{ entity.parentFixe }}</li>
+          <li class="list-group-item"><strong>Adress :</strong> {{ entity.parentAddress }}</li>
+          <li class="list-group-item"><strong>Office number :</strong> {{ entity.parentGsm }}</li>
+          <li class="list-group-item"><strong>Home number :</strong> {{ entity.parentFixe }}</li>
       </ul>
     </div>
     {% if entity.ishandicap %}
@@ -73,13 +76,13 @@ Tableau de bord | {{ parent() }}
           <h4><span class="glyphicon glyphicon-tag"></span> Handicap</h4>
       </header>
       <ul class="list-group">
-          <li class="list-group-item"><strong>Nature de l’handicap :</strong> {{ entity.handicap }}</li>
-          <li class="list-group-item"><strong>Besoins spécifiques :</strong> {{ entity.needs|nl2br }}</li>
+          <li class="list-group-item"><strong>Nature of disability :</strong> {{ entity.handicap }}</li>
+          <li class="list-group-item"><strong>Needs :</strong> {{ entity.needs|nl2br }}</li>
       </ul>
     </div>
     {% endif %}
 </div>
-<div class="col-md-12">
+<!--<div class="col-md-12">
       <div class="box">
         <header>
             <h4><span class="glyphicon glyphicon-tag"></span> Antécedents</h4>
@@ -107,7 +110,7 @@ Tableau de bord | {{ parent() }}
             </tbody>
         </table>
     </div> 
-</div>
+</div>-->
 
 <div class="col-md-12">
       <div class="box">
@@ -117,12 +120,12 @@ Tableau de bord | {{ parent() }}
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
-                    <th>Motif</th>
+                    <th>Cause</th>
                     <th>Date</th>
-                    <th>Medecin</th>
+                    <th>Doctor</th>
                     <th>Type</th>
                     <th>Diagnostic</th>
-                    <th>Traitement</th>
+                    <th>Treatment</th>
                 </tr>
             </thead>
             <tbody>

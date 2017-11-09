@@ -3,7 +3,7 @@
 Tableau de bord | {{ parent() }}
 {% endblock %}
 {% block body %}
-<h3><span class="glyphicon glyphicon-leaf"></span> Liste des médicaments</h3>
+<h3><span class="glyphicon glyphicon-leaf"></span> List of medications</h3>
 <form  id="jsForm" role="form" method="post" action="">
         <input id="pagenumber" type="hidden" name="searchParam[page]" value="1"> 
         <input id="sortBy" type="hidden" name="searchParam[sortBy]" value="all"> 
@@ -33,13 +33,13 @@ Tableau de bord | {{ parent() }}
 
           <div class="col-md-5">
             <div class="btn-group pull-right">                       
-                  <a href="#" data-toggle="modal" data-target="#searchModal" class="btn btn-primary"><span class="glyphicon glyphicon-cog"></span> Selectioner une action</a>
+                  <a href="#" data-toggle="modal" data-target="#searchModal" class="btn btn-primary"><span class="glyphicon glyphicon-cog"></span> Select action</a>
               <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="{{ path('meds_new') }}"><span class="glyphicon glyphicon-plus"></span> Nouveau</a></li>
-                <li><a href="#" id="js-delete"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></li>
+                <li><a href="{{ path('meds_new') }}"><span class="glyphicon glyphicon-plus"></span> New</a></li>
+                <li><a href="#" id="js-delete"><span class="glyphicon glyphicon-trash"></span> Delete</a></li>
               </ul>
             </div>
           </div>
@@ -48,18 +48,18 @@ Tableau de bord | {{ parent() }}
         <thead>
             <tr>
                 <th class="hidden-print"><input id="checkall" type="checkbox" value=""></th>
-                <th class="sortable"><a href="#" class="js-sort" data-order="name">Nom<span class="glyphicon glyphicon-sort pull-right"></span></a></th>
-                <th class="sortable"><a href="#" class="js-sort" data-order="count">Quantité<span class="glyphicon glyphicon-sort pull-right"></span></a></th>
+                <th class="sortable"><a href="#" class="js-sort" data-order="name">Name<span class="glyphicon glyphicon-sort pull-right"></span></a></th>
+                <th class="sortable"><a href="#" class="js-sort" data-order="count">Quantity<span class="glyphicon glyphicon-sort pull-right"></span></a></th>
                 <th>Type</th>
                 <th>Description</th>
-                <th class="sortable"><a href="#" class="js-sort" data-order="expdate">Date d'expiration<span class="glyphicon glyphicon-sort pull-right"></span></a></th>
+                <th class="sortable"><a href="#" class="js-sort" data-order="expdate">Expiry date<span class="glyphicon glyphicon-sort pull-right"></span></a></th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody id="dataContainer"></tbody>
         </table>
         <div class="caption">
-          <strong>Total:</strong> <em>{{ entitiesLength }} Médicaments</em>
+          <strong>Total:</strong> <em>{{ entitiesLength }} Medications</em>
         </div>
 </form>
 {% endblock body %}
@@ -78,7 +78,7 @@ Tableau de bord | {{ parent() }}
       }
       function isSelected () {
         if (!getCheckedRows()) {
-          alert('vous devez selectionner au moin un adhérant');
+          alert('Please select a product');
           return false;
         };
         return true;
@@ -141,7 +141,7 @@ Tableau de bord | {{ parent() }}
 
       /* delete a user */
       deleteBtn.on('click', function(){
-        if (!isSelected() || !confirmation('voullez-vous vraiment supprimer les adhérants séléctionnées')) return false;
+        if (!isSelected() || !confirmation('Would you like to continue with the action')) return false;
         jsFormUrl='{{ path('meds_remove') }}';
         ajaxPost('delete');
       });

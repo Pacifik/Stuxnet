@@ -15,11 +15,11 @@ class MedsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name','text', array('label'=>'Medicament'))
-            ->add('count','text', array('label'=>'Nombre d\'unité'))
+            ->add('name','text', array('label'=>'Medication'))
+            ->add('count','text', array('label'=>'Number'))
             ->add('type','text', array('label'=>'Type'))
             ->add('about','textarea', array('label'=>'Description'))
-            ->add('expdate','date', array('widget' => 'single_text', 'label'=>'Date d\'expiration'))
+            ->add('expdate','date', array('widget' => 'single_text', 'label'=>'Expiry date'))
         ;
     }
     

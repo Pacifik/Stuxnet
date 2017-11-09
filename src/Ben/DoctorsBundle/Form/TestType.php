@@ -39,8 +39,8 @@ class TestType extends AbstractType
         else 
             $builder
                 ->add('type', 'choice', array('label'=>'Type', 'choices' => array(
-                    'Examens biologiques' => 'Examens biologiques',
-                    'Examens radioloqiue' => 'Examens radioloqiue',
+                    'Examens biologiques' => 'Biological checkup',
+                    'Examens radioloqiue' => 'Radiological checkup',
                     'Autre' => 'Autre')))
                 ->add('request', 'textarea', array('label'=>'Demande','required'  => false))
                 ->add('result', 'textarea', array('label'=>'Resultat','required'  => false))

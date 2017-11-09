@@ -22,13 +22,13 @@ class ConsultationType extends AbstractType
     {
         if($this->general)
             $builder
-                ->add('motiftype', 'choice', array('label'=>'Type', 'choices' => array('EXAMEN MEDICAL SYSTEMATIQUE' => 'SYSTEMATIC MEDICAL EXAM','CONSULTATION MEDICALE A LA DEMANDE' => 'APPOINTMENT'),
+                ->add('motiftype', 'choice', array('label'=>'Type', 'choices' => array('SYSTEMATIC MEDICAL CHECKUP' => 'SYSTEMATIC MEDICAL CHECKUP','MEDICAL CONSULTATION ON APPOINTMENT' => 'APPOINTMENT'),
                     'required' => false,))
-                ->add('name', 'text', array('label'=>'Motif'));
+                ->add('name', 'text', array('label'=>'Cause'));
         else
             $builder
-                ->add('name', 'text', array('label'=>'Specialité medicale'))
-                ->add('infrastructure', 'text', array('label'=>'Infrastructure sanitaire de reference'));
+                ->add('name', 'text', array('label'=>'Medical speciality'))
+                ->add('infrastructure', 'text', array('label'=>'Sanitary infrastructures by reference'));
 
         $builder
             ->add('diagnosis')
@@ -40,12 +40,12 @@ class ConsultationType extends AbstractType
         if($this->general)
             $builder
                 ->add('decision', 'choice', array('label'=>'Decision', 'choices' => array(
-                            'Préscription du traitement' => 'Prescription treatment',
+                            'Préscription du traitement' => 'Prescription of treatment',
                             'Orientation vers la consultation médicale spécialisé' => 'Needs a specialized medical consultation'),
                     'required' => false,))
                 ->add('chronic', 'checkbox', array('label'=>'Chronic disease ?', 'required'  => false));
 
-        $builder->add('consultationmeds', 'collection', array('label'=>'Medecines delivered by the pharmacy', 'type' => new ConsultationMedsType(), 'allow_add' => true, 'by_reference' => false, 'allow_delete' => true,'prototype' => true,))
+        $builder->add('consultationmeds', 'collection', array('label'=>'Medicines delivered', 'type' => new ConsultationMedsType(), 'allow_add' => true, 'by_reference' => false, 'allow_delete' => true,'prototype' => true,))
         ;
 
     }

@@ -1,34 +1,35 @@
 <legend>Patient identity</legend>  
-  {{ form_row(form.familyname, { 'label': 'Nom'}) }}
-  {{ form_row(form.firstname, { 'label': 'Prénom'}) }}
-  {{ form_row(form.birthday, { 'label': 'Date de naissance'}) }}
-  {{ form_row(form.birthcity, { 'label': 'Lieu de naissance'}) }}
+  
+  {{ form_row(form.firstname, { 'label': 'Firstname'}) }}
+  {{ form_row(form.familyname, { 'label': 'Surname'}) }}
+  {{ form_row(form.birthday, { 'label': 'Date of birth'}) }}
+  {{ form_row(form.birthcity, { 'label': 'Place of birth'}) }}
   {{ form_row(form.gender, { 'label': 'Sex'}) }}
   {{ form_row(form.contry, { 'label': 'Nationality'}) }}
-  {{ form_row(form.cin, { 'label': 'CIN'}) }}
-  {{ form_row(form.cne, { 'label': 'CNE'}) }}
+  {{ form_row(form.cin, { 'label': 'ID'}) }}
+  {{ form_row(form.cne, { 'label': 'FID'}) }}
 
 <legend>General informations</legend>
-  {{ form_row(form.university, { 'label': 'Université'}) }}
-  {{ form_row(form.etablissement, { 'label': 'Etablissement d\'enseignement'}) }}
-  {{ form_row(form.resident, { 'label': 'Résident ?'}) }}
-  {{ form_row(form.address, { 'label': 'Adresse Personnelle'}) }}
-  {{ form_row(form.parentAddress, { 'label': 'Adresse des parents'}) }}
-  {{ form_row(form.city, { 'label': 'Province'}) }}
-  {{ form_row(form.gsm, { 'label': 'GSM'}) }}
+  {{ form_row(form.university, { 'label': 'University'}) }}
+  {{ form_row(form.etablissement, { 'label': 'High school'}) }}
+  {{ form_row(form.resident, { 'label': 'Resident ?'}) }}
+  {{ form_row(form.address, { 'label': 'Adress'}) }}
+  {{ form_row(form.parentAddress, { 'label': 'Adress of parents'}) }}
+  {{ form_row(form.city, { 'label': 'City'}) }}
+  {{ form_row(form.gsm, { 'label': 'Cell'}) }}
   {{ form_row(form.email, { 'label': 'E-Mail'}) }}
-  {{ form_row(form.cnsstype, { 'label': 'Type de couverture sociale'})  }}
+  {{ form_row(form.cnsstype, { 'label': 'Medical insurance'})  }}
   {# {{ form_row(form.cnss, { 'label': 'N° de couverture sociale'})  }} #}
 
   <legend>Kin</legend>
-  {{ form_row(form.parentName, { 'label': 'Nom et prenom'}) }}
-  {{ form_row(form.parentGsm, { 'label': 'GSM'}) }}
-  {{ form_row(form.parentFixe, { 'label': 'FIXE'}) }}
+  {{ form_row(form.parentName, { 'label': 'Full name'}) }}
+  {{ form_row(form.parentGsm, { 'label': 'Office number'}) }}
+  {{ form_row(form.parentFixe, { 'label': 'Home number'}) }}
 
-  <legend>Partie handicap</legend>
-  {{ form_row(form.ishandicap, { 'label': 'Handicap ?'}) }}
-  {{ form_row(form.handicap, { 'label': 'Nature de l’handicap'}) }}
-  {{ form_row(form.needs, { 'label': 'Besoins spécifiques'}) }}
+  <legend>Handicap</legend>
+  {{ form_row(form.ishandicap, { 'label': 'Disability ?'}) }}
+  {{ form_row(form.handicap, { 'label': 'Nature of disability'}) }}
+  {{ form_row(form.needs, { 'label': 'Needs'}) }}
   {{ form_rest(form) }} 
       
 
